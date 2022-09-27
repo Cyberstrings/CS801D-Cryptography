@@ -6,10 +6,10 @@
     #3.1. E and D(N) is mutually prime i.e. they have no common factor other than 1. So, HCF(e, D(N)) = 1.
     #3.2. 1 < E < D(N)
 #4. <E, N> is our public key. Support plaintext = P, then:
-#4. Cipher C = P^E mod N. [Mod means modulus or remainder. So P^E - N would be divisible by C]
-#5. We pick a number D so that D != E and D*E = 1 mod D(N). [D(N) - 1 would be divisible by D*E]
+#4. Cipher C = P^E mod N. [Mod means % modulus or remainder. So P^E ~ C would be divisible by N] [~ means positive difference]
+#5. We pick a number D so that D != E and D*E = 1 mod D(N). [1 ~ D*E would be divisible by D(N)]
 #6. <D, N> is our private key. If cipher = C, then:
-#6. Plaintext P = C^D mod N. [C^D - N would be divisible by P, i.e. P % N = C^D]
+#6. Plaintext P = C^D mod N. [C^D ~ P would be divisible by N] [Trick: A = B mod C => mo(d C) => (d C) => divisible by C => A~B divisible by C]
 
 '''
 This program takes a string input say 'apple', converts it into an ASCII integer array say [97, 112, 112...].
