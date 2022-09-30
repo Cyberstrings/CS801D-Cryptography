@@ -1,7 +1,7 @@
 # IDEA = International Data Encryption Algorithm
 #0. Three operations: xor = Bitwise XOR, /+\ = Addition modulo 2^16 or (A+B) mod 2^16, \*/ = Multiplication modulo 2^16+1 or (A*B) mod 2^16+1.
 #1. Uses a fixed-length plaintext of 16bits and encrypts them in 4 chunks of 4bits each.
-#2. The length of the key used is 32bits. The key is also divided into 8 blocks of 4bits each.
+#2. The length of the message is 64bits, so it can encrypt 64bits at once. Larger messages needs to be broken into chunks of 64bits.
 #3. Let message = ABCDEFGHIJKLMNOP (16 bits). Then, X1 = ABCD, X2 = EFGH, X3 = IJKL, X4 = MNOP.
 #4. Key = 128bit, each bit denoted by K[0] to K[127]. It will be split into 8 subkeys of 16bits each.
 #5. (1) Do cyclic left shift of the key by 25 positions.
